@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escola Virtual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80vh;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #000;
+        }
+
+        .container_dados_pessoais,
+        .container_info_matriculas {
+            padding: 10px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            margin: 15px;
+            background: #fff;
+            white-space: nowrap;
+        }
+
+        h3 {
+            background-color: #fff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .container_dados_pessoais label {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 10px;
+            text-align: left;
+        }
+
+        .container_dados_pessoais input {
+            width: 90%;
+            padding: 5px;
+            border: 1px solid #000;
+            border-radius: 4px;
+            text-align: left;
+        }
+
+        .container_info_matriculas {
+            display: block;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            white-space: nowrap;
+        }
+
+        .selecao {
+            width: 48%;
+            margin: 10px;
+            display: inline;
+        }
+
+        .selecao label {
+            display: block;
+            align-self: flex-start;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .container_info {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            white-space: nowrap;
+        }
+
+        input[type="text"]:focus,
+        select:focus {
+            border-color: #000;
+            outline: none;
+        }
+
+        button {
+            display: inline-block;
+            width: 48%;
+            padding: 10px;
+            margin: 10px 1%;
+            border: 2px solid #000;
+            background-color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            margin-right: 10px;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Escola Virtual</h1>
+        <h2>Formulários de Pré-Matrícula</h2>
+        <form action="salvaMatricula.php" method="post">
+            <div class="container_dados_pessoais">
+                <h3>Dados Pessoais</h3>
+                <label>Nome do Aluno:<input type="text" name="nomeAluno" /></label>
+                <label>Data Nascimento (dd/mm/aaaa):
+                    <input type="text" class="inputMini" name="dia" /> /
+                    <input type="text" class="inputMini" name="mes" /> /
+                    <input type="text" class="inputMini" name="ano" />
+                </label>
+                <label>Nome da Mãe:<input type="text" name="nomeMae" /></label>
+                <label>Nome do Pai:<input type="text" name="nomePai" /></label>
+                <label>Telefone: DDD (
+                    <input type="text" class="inputMini" name="ddd" />)
+                    Tel: <input type="text" name="telefone" />
+                    Ramal: <input type="text" class="inputMini" name="ramal" />
+                </label>
+                <label>E-mail: <input type="text" name="email" /></label>
+            </div>
+
+            <div class="container_info_matriculas">
+                <h3>Informações de Matrícula</h3>
+                <div class="container_info">
+                    <div class="selecao">
+                        <h4>Série</h4>
+                        <select name="serie">
+                            <option value="pré-escolar">pré-escolar</option>
+                            <option value="1ª Série">1ª Série</option>
+                            <option value="2ª Série">2ª Série</option>
+                            <option value="3ª Série">3ª Série</option>
+                            <option value="4ª Série">4ª Série</option>
+                            <option value="5ª Série">5ª Série</option>
+                        </select>
+                    </div>
+                    <div class="selecao">
+                        <h4>Turno</h4>
+                        <label><input type="radio" name="turno" value="Manhã" /> Manhã</label>
+                        <label><input type="radio" name="turno" value="Tarde" /> Tarde</label>
+                    </div>
+                    <div class="selecao">
+                        <h4>Atividades Extracurriculares</h4>
+                        <label><input type="checkbox" name="atividades[]" value="Informática" /> Informática</label>
+                        <label><input type="checkbox" name="atividades[]" value="Música" /> Música</label>
+                        <label><input type="checkbox" name="atividades[]" value="Balet" /> Balet</label>
+                        <label><input type="checkbox" name="atividades[]" value="Pintura" /> Pintura</label>
+                        <label><input type="checkbox" name="atividades[]" value="Judô" /> Judô</label>
+                        <label><input type="checkbox" name="atividades[]" value="Futebol" /> Futebol</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button">
+                <button type="submit">Enviar Formulário</button>
+                <button type="reset">Limpar Campos</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
