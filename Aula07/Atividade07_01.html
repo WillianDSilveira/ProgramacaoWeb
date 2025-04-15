@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade07</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+  
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    button:hover {
+      background-color: #45a049;
+    }
+  
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+  
+<script>
+    function mostrarNomeEndereco() {
+        let nome = "Willian Dalferth da Silveira";
+        let endereco = "Rua Sobradinho, 168 - Alvorada/RS";
+        document.getElementById("resultado").innerHTML =
+            "Nome: " + nome + "<br>Endereço: " + endereco;
+    }
+</script>
+
+<body>
+    <h2>Mostrar Nome e Endereço</h2>
+    <button onclick="mostrarNomeEndereco()">Mostrar Dados</button>
+    <p id="resultado"></p>
+</body>
+
+</html>

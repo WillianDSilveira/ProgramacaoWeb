@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Simples</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            
+            
+        }
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        #resultado {
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Calculadora Simples</h2>
+
+        <!-- Entrada de valores -->
+        <label for="valor1">Digite o primeiro número:</label>
+        <input type="number" id="valor1" placeholder="Ex.: 5">
+
+        <label for="valor2">Digite o segundo número:</label>
+        <input type="number" id="valor2" placeholder="Ex.: 3">
+
+        <label for="operacao">Escolha a operação:</label>
+        <select id="operacao">
+            <option value="soma">Soma (+)</option>
+            <option value="subtracao">Subtração (-)</option>
+        </select>
+
+        <!-- Botão para calcular -->
+        <button onclick="calcular()">Calcular</button>
+
+        <!-- Exibição do resultado -->
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcular() {
+            // Obtendo valores dos campos
+            var valor1 = document.getElementById("valor1").value.trim();
+            var valor2 = document.getElementById("valor2").value.trim();
+            var operacao = document.getElementById("operacao").value;
+
+            // Validação das entradas
+            if (valor1 === "" || valor2 === "") {
+                document.getElementById("resultado").textContent = "Erro: Todos os campos devem ser preenchidos.";
+                return;
+            }
+
+            // Convertendo para números
+            valor1 = parseFloat(valor1);
+            valor2 = parseFloat(valor2);
+
+            // Verificando se os valores são válidos
+            if (isNaN(valor1) || isNaN(valor2)) {
+                document.getElementById("resultado").textContent = "Erro: Por favor, insira números válidos.";
+                return;
+            }
+
+            // Realizando a operação escolhida
+            var resultado;
+            if (operacao === "soma") {
+                resultado = valor1 + valor2;
+            } else if (operacao === "subtracao") {
+                resultado = valor1 - valor2;
+            }
+
+            // Exibindo o resultado
+            document.getElementById("resultado").textContent = "Resultado: " + resultado;
+        }
+    </script>
+
+</body>
+
+</html>

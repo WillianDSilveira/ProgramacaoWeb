@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+       padding: 0;
+        margin: 0;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        text-align: center;
+    }
+
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #resultado {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    function mostrarTextoDigitado() {
+        let texto = document.getElementById("texto").value;
+        document.getElementById("resultado").innerText = "Você digitou: " + texto;
+    }
+</script>
+
+<body>
+
+    <h2>Exibir Texto Digitado</h2>
+    <input type="text" id="texto" placeholder="Digite algo">
+    <button onclick="mostrarTextoDigitado()">Exibir</button>
+    <p id="resultado"></p>
+
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tarefas JavaScript - Willian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #3498db, #ffffff);
+            padding: 30px;
+            align-items: center;
+            justify-content: center;
+
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        div {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+        }
+
+        input,
+        select,
+        button {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+        #resultado4,
+        #saida8 {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Atividades JavaScript</h1>
+
+    <div>
+        <!-- Tarefa 3 -->
+        <h2>3. Leitura de Nome e Idade (com alert)</h2>
+        <input type="text" id="nome3" placeholder="Digite seu nome">
+        <input type="number" id="idade3" placeholder="Digite sua idade">
+        <button onclick="mostrarAlert()">Mostrar com Alert</button>
+
+        <script>
+            function mostrarAlert() {
+                let nome = document.getElementById("nome3").value;
+                let idade = document.getElementById("idade3").value;
+                alert("Seu nome é " + nome + " e sua idade é " + idade + " anos.");
+            }
+        </script>
+
+        <hr>
+
+    </div>
+
+
+    <div>
+
+        <!-- Tarefa 4 -->
+        <h2>4. Exibir Nome e Idade com Cor</h2>
+        <input type="text" id="nome4" placeholder="Digite seu nome">
+        <input type="number" id="idade4" placeholder="Digite sua idade">
+        <input type="color" id="cor4">
+        <button onclick="exibirCor()">Exibir na Tela</button>
+        <p id="resultado4"></p>
+
+        <script>
+            function exibirCor() {
+                let nome = document.getElementById("nome4").value;
+                let idade = document.getElementById("idade4").value;
+                let cor = document.getElementById("cor4").value;
+                document.getElementById("resultado4").innerHTML =
+                    "Seu nome é " + nome + " e sua idade é " + idade + " anos.";
+                document.getElementById("resultado4").style.color = cor;
+            }
+        </script>
+
+        <hr>
+    </div>
+
+
+    <div>
+
+        <!-- Tarefa 5 -->
+        <h2>5. Calculadora - Somar 2 Valores</h2>
+        <input type="number" id="valor1_5" placeholder="Valor 1">
+        <input type="number" id="valor2_5" placeholder="Valor 2">
+        <button onclick="somarValores()">Somar</button>
+
+        <script>
+            function somarValores() {
+                let v1 = parseFloat(document.getElementById("valor1_5").value);
+                let v2 = parseFloat(document.getElementById("valor2_5").value);
+                alert("Resultado da soma: " + (v1 + v2));
+            }
+        </script>
+
+        <hr>
+
+    </div>
+
+
+    <div>
+        <!-- Tarefa 6 -->
+        <h2>6. Calculadora - Soma ou Subtração</h2>
+        <input type="number" id="valor1_6" placeholder="Valor 1">
+        <input type="number" id="valor2_6" placeholder="Valor 2">
+        <select id="operacao6">
+            <option value="soma">Somar</option>
+            <option value="subtrai">Subtrair</option>
+        </select>
+        <button onclick="calcular()">Calcular</button>
+
+        <script>
+            function calcular() {
+                let v1 = parseFloat(document.getElementById("valor1_6").value);
+                let v2 = parseFloat(document.getElementById("valor2_6").value);
+                let op = document.getElementById("operacao6").value;
+
+                if (op === "soma") {
+                    alert("Resultado: " + (v1 + v2));
+                } else {
+                    alert("Resultado: " + (v1 - v2));
+                }
+            }
+        </script>
+
+        <hr>
+
+    </div>
+
+
+    <div>
+        <!-- Tarefa 7 -->
+        <h2>7. Verificação de Preço de Produto</h2>
+        <input type="text" id="produto7" placeholder="Nome do produto">
+        <input type="number" id="preco7" placeholder="Preço do produto">
+        <button onclick="verificarPreco()">Verificar</button>
+
+        <script>
+            function verificarPreco() {
+                let preco = parseFloat(document.getElementById("preco7").value);
+                if (preco > 100) {
+                    alert("Produto maior que 100");
+                } else {
+                    alert("Produto menor que 100");
+                }
+            }
+        </script>
+
+        <hr>
+    </div>
+
+    <div>
+
+        <!-- Tarefa 8 -->
+        <h2>8. Escrever Nome e Cidade em Negrito 10x</h2>
+        <button onclick="escrever10vezes()">Executar</button>
+        <div id="saida8"></div>
+
+        <script>
+            function escrever10vezes() {
+                let nome = "Willian";
+                let cidade = "Porto Alegre";
+                let saida = "";
+
+                for (let i = 0; i < 10; i++) {
+                    saida += "<b>" + nome + " - " + cidade + "</b><br>";
+                }
+
+                document.getElementById("saida8").innerHTML = saida;
+            }
+        </script>
+
+        <hr>
+    </div>
+
+    <div>
+        <!-- Tarefa 9 -->
+        <h2>9. Validação de Nome e Idade</h2>
+        <input type="text" id="nome9" placeholder="Seu nome">
+        <input type="number" id="idade9" placeholder="Sua idade">
+        <button onclick="validarDados()">Validar</button>
+
+        <script>
+            function validarDados() {
+                let nome = document.getElementById("nome9").value;
+                let idade = parseInt(document.getElementById("idade9").value);
+
+                if (nome === "" || idade <= 0 || idade > 120) {
+                    alert("Erro: Dados inválidos.");
+                } else {
+                    alert("Sucesso: Dados válidos!");
+                }
+            }
+        </script>
+    </div>
+
+
+</body>
+
+</html>

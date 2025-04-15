@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto 1</title>
+    <style>
+        /* Definindo a fonte e o fundo da página */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Cabeçalho */
+        h1 {
+            font-size: 36px;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+
+        /* Estilo da tabela */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Cabeçalho da tabela */
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 18px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        /* Celulas da tabela */
+        td {
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Estilo das imagens */
+        td img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Efeito de hover nas imagens */
+        td img:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+
+        /* Estilo para os preços */
+        td:nth-child(2) {
+            font-weight: bold;
+            color: #f57c00;
+        }
+
+        /* Estilo das linhas alternadas para uma melhor legibilidade */
+        tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            padding: 20px;
+            background-color: #f4f4f4;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilo da div */
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Detalhes do Produto: Sprite</h1>
+        <img src="imagens/Sprite.jpg" alt="Produto 1" width="200">
+        <p><strong>Preço:</strong> R$ 1,99</p>
+        <p><strong>Descrição:</strong> Bebida refrescante, perfeita para os dias quentes.</p>
+        <a href="produtos.html">Voltar para Produtos</a>
+    </div>
+    
+</body>
+</html>
