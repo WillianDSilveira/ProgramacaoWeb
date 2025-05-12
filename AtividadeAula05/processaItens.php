@@ -19,11 +19,14 @@
         }
         h2 {
             text-align: center;
-            color: #4CAF50;
+            color:rgb(76, 111, 175);
         }
         p {
             font-size: 16px;
             margin-bottom: 10px;
+        }
+        .link{
+            text-align: center;
         }
     </style>
 </head>
@@ -34,6 +37,10 @@
         <p><strong>Tipo do Produto:</strong> <?= isset($_POST["tipo"]) ? htmlspecialchars($_POST["tipo"]) : 'Não informado' ?></p>
         <p><strong>Quantidade:</strong> <?= isset($_POST["quantidade"]) ? htmlspecialchars($_POST["quantidade"]) : 'Não informado' ?></p>
         <p><strong>Preço:</strong> R$ <?= isset($_POST["preco"]) ? htmlspecialchars($_POST["preco"]) : 'Não informado' ?></p>
+        <div class="link">
+            <a href="pagina2.html">Ir para a próxima página</a>
+        </div>
     </div>
+    
 </body>
 </html>

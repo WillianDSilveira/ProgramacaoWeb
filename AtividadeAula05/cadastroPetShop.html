@@ -19,6 +19,7 @@
             border: 2px solid #ccc;
             border-radius: 8px;
             justify-items: left;
+            text-align: center;
         }
 
         h2 {
@@ -28,11 +29,16 @@
         label {
             display: block;
             margin-top: 10px;
+            text-align: left;
+        }
+
+        form {
+            width: 100%;
         }
 
         input[type="text"],
         input[type="number"] {
-            width: 100%;
+            width: 90%;
             padding: 8px;
             margin-top: 4px;
             border: 1px solid #ccc;
@@ -43,7 +49,7 @@
             margin-top: 15px;
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: rgb(76, 111, 175);
             border: none;
             color: white;
             font-weight: bold;
@@ -79,9 +85,11 @@
 
             <label for="preco">Preço (R$):</label>
             <input type="text" id="preco" name="preco" required>
-
             <input type="submit" value="Cadastrar Produto">
+
         </form>
+
+
 
         <img src="https://classic.exame.com/wp-content/uploads/2022/12/shiba.png?ims=750x/filters:quality(85):format(webp)"
             alt="Pet Shop">

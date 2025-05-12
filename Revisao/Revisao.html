@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script>
+        function verificarLogin() {
+            const user = document.getElementById("usuario").value;
+            const senha = document.getElementById("senha").value;
+
+            if (user === "brasil" && senha === "123") {
+                document.getElementById("mensagem").innerText = "";
+                document.getElementById("btnBemVindo").style.display = "inline";
+            } else {
+                document.getElementById("mensagem").innerText = "Usuário ou senha incorretos!";
+                document.getElementById("usuario").value = "";
+                document.getElementById("senha").value = "";
+            }
+        }
+
+        function abrirJanela() {
+            window.open("", "", "width=300,height=200").document.write("<h2>Seja Bem-vindo!</h2>");
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Login</h3>
+    <input type="text" id="usuario" placeholder="Usuário"><br>
+    <input type="password" id="senha" placeholder="Senha"><br>
+    <button onclick="verificarLogin()">Entrar</button>
+    <p id="mensagem" style="color:red;"></p>
+    <button id="btnBemVindo" onclick="abrirJanela()" style="display:none;">Continuar</button>
+</body>
+
+</html>
