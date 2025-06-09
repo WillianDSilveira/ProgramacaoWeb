@@ -29,7 +29,7 @@ if (isset($_FILES['foto']) && $_FILES['foto']['error'] == UPLOAD_ERR_OK){
 }
 
 // Inserir no banco 
-$stmt = $conn->prepare("INSERT INTO pessoas (nome, rua, numero, complemento, bairro, cidade, estado, cep, foto) 
+$stmt = $conn->prepare("INSERT INTO enderecos (nome, rua, numero, complemento, bairro, cidade, estado, cep, foto) 
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("sssssssss", $nome, $rua, $numero, $complemento, $bairro, $cidade, $estado, $cep, $foto);
 $stmt->execute();
