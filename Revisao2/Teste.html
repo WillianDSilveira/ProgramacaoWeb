@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tela de Login</title>
+</head>
+
+<body>
+    <h2>Login</h2>
+    <form onsubmit="event.preventDefault(); verificarLogin();">
+        <p id="mensagem" style="color:red;"></p>
+
+        <label for="usuario">Usuário:</label><br>
+        <input type="text" id="usuario"><br><br>
+
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha"><br><br>
+
+        <button type="submit">Entrar</button><br><br>
+    </form>
+
+    <button id="botaoBemVindo" onclick="abrirBemVindo()" style="display:none;">Prosseguir</button>
+
+    <script>
+        function verificarLogin() {
+            var usuario = document.getElementById('usuario').value;
+            var senha = document.getElementById('senha').value;
+            var mensagem = document.getElementById('mensagem');
+
+            if (usuario === 'brasil' && senha === '123') {
+                mensagem.textContent = '';
+                document.getElementById('botaoBemVindo').style.display = 'inline';
+            } else {
+                mensagem.textContent = 'Usuário ou senha incorretos. Tente novamente.';
+                document.getElementById('usuario').value = '';
+                document.getElementById('senha').value = '';
+                document.getElementById('usuario').focus();
+                document.getElementById('botaoBemVindo').style.display = 'none';
+            }
+        }
+
+        function abrirBemVindo() {
+            window.open('', '', 'width=300,height=200').document.write('<h2>Seja Bem vindo</h2>');
+        }
+    </script>
+</body>
+
+</html>

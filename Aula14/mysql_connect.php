@@ -1,14 +1,14 @@
 <?php
 $servername = "localhost";
-$database = "teste2";
+$database = "teste";
 $username =  "root";
 $password = "";
 // Criando a conexão
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = mysqli_connect($servername, $username, $password, $database, 3030);
 
 // vereigficando a conexão
-if(!$con) {
-    die("falha na conexão".mysqli_connect_error())
+if(!$conn) {
+    die("falha na conexão".mysqli_connect_error());
 }
 
 echo "Conecetado com sucesso";

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validarFormulario() {
+            const primeiroNome = document.forms["formulario"]["primeiro_nome"].value;
+            const ultimoNome = document.forms["formulario"]["ultimo_nome"].value;
+            const email = document.forms["formulario"]["email"].value;
+            const sexo = document.forms["formulario"]["sexo"].value;
+
+            if (primeiroNome === "" || ultimoNome === "" || email === "" || sexo === "") {
+                alert("Todos os campos são obrigatórios!");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>HTML – Formulários – Exemplo</h2>
+    <form name="formulario" action="processa.php" method="POST" onsubmit="return validarFormulario();">
+        <label for="primeiro_nome">Primeiro nome:</label>
+        <input type="text" name="primeiro_nome"><br><br>
+
+        <label for="ultimo_nome">Último nome:</label>
+        <input type="text" name="ultimo_nome"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email"><br><br>
+
+        Sexo:<br>
+        <input type="radio" name="sexo" value="Masculino"> Masculino<br>
+        <input type="radio" name="sexo" value="Feminino"> Feminino<br><br>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Redefinir">
+    </form>
+</body>
+
+</html>

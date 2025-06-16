@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            width: 400px;
+            margin: 50px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="radio"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+
+        }
+
+        input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+            margin-top: 10px;
+
+        }
+
+        input[type="submit"],
+        input[type="button"] {
+            background-color: #2632db;
+            color: white;
+            border: none;
+            padding: 15px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            width: 48%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: #2632db;
+        }
+
+        input[type="button"] {
+            background-color: #f44336;
+        }
+
+        input[type="button"]:hover {
+            background-color: #e53935;
+        }
+    </style>
+    <script>
+        function validarFormulario() {
+            const primeiroNome = document.forms["meuFormulario"]["primeiroNome"].value;
+            const ultimoNome = document.forms["meuFormulario"]["ultimoNome"].value;
+            const email = document.forms["meuFormulario"]["email"].value;
+            const generoMasc = document.forms["meuFormulario"]["genero"][0].checked;
+            const generoFem = document.forms["meuFormulario"]["genero"][1].checked;
+
+            if (!primeiroNome || !ultimoNome || !email || (!generoMasc && !generoFem)) {
+                alert("Todos os campos devem ser preenchidos!");
+                return false;
+            }
+
+            return true;
+        }
+
+        function limparCampos() {
+            document.getElementById("meuFormulario").reset();
+        }
+    </script>
+</head>
+
+<body>
+    <form name="meuFormulario" id="meuFormulario" method="post" action="processa.php"
+        onsubmit="return validarFormulario();">
+        <label>Primeiro nome:</label><br>
+        <input type="text" name="primeiroNome"><br><br>
+
+        <label>Último nome:</label><br>
+        <input type="text" name="ultimoNome"><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
+
+        <label>Sexo:</label><br>
+        <input type="radio" name="genero" value="Masculino"> Masculino<br>
+        <input type="radio" name="genero" value="Feminino"> Feminino<br><br>
+
+        <input type="submit" value="Enviar">
+        <input type="button" value="Redefinir" onclick="limparCampos()">
+    </form>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 <?php
 // Configurações de conexão
 $servername = "localhost";
-$database = "teste2";
+$database = "teste";
 $username = "root";
 $password = "";
 
