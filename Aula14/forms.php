@@ -27,10 +27,10 @@ if (isset($_GET['edit'])) {
     <h1 class="mb-4 text-center">Cadastro de Alunos</h1>
 
     <div class="card p-4 mb-5 shadow-sm">
-        <form action="process.php" method="POST" class="row g-3">
+        <form action="process.php" method="POST" class="row g-4">
             <input type="hidden" name="id" value="<?= $editando ? $alunoEdit['id'] : '' ?>">
 
-            <div class="col-md-8">
+            <div class="row-md-4">
                 <input
                     type="text"
                     name="nome"
@@ -39,9 +39,21 @@ if (isset($_GET['edit'])) {
                     required
                     value="<?= $editando ? htmlspecialchars($alunoEdit['nome']) : '' ?>"
                 >
+                
             </div>
 
-            <div class="col-md-4">
+            <div class="row-md-4">
+                <input
+                    type="number"
+                    name="idade"
+                    class="form-control form-control-lg"
+                    placeholder="Idade"
+                    required
+                    value="<?= $editando ? htmlspecialchars($alunoEdit['idade']) : '' ?>"
+                >
+            </div>
+
+            <div class="row-md-4">
                 <?php if ($editando): ?>
                     <button type="submit" name="edit" class="btn btn-warning btn-lg w-100">Atualizar</button>
                     <a href="index.php" class="btn btn-secondary btn-lg w-100 mt-2">Cancelar</a>
@@ -58,6 +70,7 @@ if (isset($_GET['edit'])) {
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
+                <th>Idade</th>
                 <th style="width: 150px;">Ações</th>
             </tr>
         </thead>
@@ -70,6 +83,7 @@ if (isset($_GET['edit'])) {
                 <tr>
                     <td><?= $row['id'] ?></td>
                     <td><?= htmlspecialchars($row['nome']) ?></td>
+                    <td><?= htmlspecialchars($row['idade']) ?></td>
                     <td>
                         <a href="?edit=<?= $row['id'] ?>" class="btn btn-sm btn-warning">Editar</a>
                         <a href="process.php?delete=<?= $row['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Confirma exclusão do aluno?')">Excluir</a>
