@@ -13,7 +13,7 @@ if (isset($_POST['nome']) && isset($_POST['preco']) && !isset($_POST['id'])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sd", $nome, $preco);
     $stmt->execute();
-    header("Location: relatorio.php");
+    header("Location: carrinho.php");
     exit;
 }
 
@@ -26,7 +26,7 @@ if (isset($_POST['update']) && isset($_POST['id'])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sdi", $nome, $preco, $id);
     $stmt->execute();
-    header("Location: relatorio.php");
+    header("Location: carrinho.php");
     exit;
 }
 
@@ -37,9 +37,21 @@ if (isset($_GET['delete'])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();
-    header("Location: relatorio.php");
+    header("Location: carrinho.php");
     exit;
 }
+
+
+if (isset($_GET['delete_produtos'])) {
+    $sql = "TRUNCATE TABLE produtos";
+    if ($conn->query($sql) === TRUE) {
+        header("Location: formulario.php");
+        exit;
+    } else {
+        echo "Erro ao deletar produtos: " . $conn->error;
+    }
+}
+
 
 $conn->close();
 ?>

@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
     <style>
         body {
-            background: linear-gradient(to right, #fceabb, #f8b500);
+            background: linear-gradient(to right, #fceabb,rgb(248, 0, 0));  /* #f8b500 */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -55,7 +55,11 @@
 
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="w-100" style="max-width: 900px;">
-            <h1 class="mb-4 text-center">Carrinho de Produtos Comprados</h1>
+            <div class="text-center mb-6">
+                <i class="fas fa-paw pet-icon"></i>
+                <h1 class="mb-4 text-center">Pedido de Compras</h1>
+            </div>
+            
             <div class="card shadow-sm p-4">
 
                 <?php
@@ -69,7 +73,7 @@
 
                 if ($result->num_rows > 0) {
                     echo "<table class='table table-bordered table-striped table-hover table table-bordered table-orange'>";
-                    echo "<thead class='table-dark'><tr><th>ID</th><th>Nome</th><th>Preço (R$)</th><th>Ações</th></tr></thead><tbody>";
+                    echo "<thead class='table-dark'><tr><th>ID</th><th>Nome</th><th>Preço (R$)</th></tr></thead><tbody>";
 
                     $total = 0;
 
@@ -78,10 +82,7 @@
                                 <td>{$row['id']}</td>
                                 <td>{$row['nome']}</td>
                                 <td>R$ " . number_format($row['preco'], 2, ',', '.') . "</td>
-                                <td>
-                                    <a href='relatorio.php?edit={$row['id']}' class='btn btn-warning btn-sm'>Editar</a>
-                                    <a href='processa.php?delete={$row['id']}' class='btn btn-danger btn-sm' onclick=\"return confirm('Tem certeza que deseja excluir?');\">Excluir</a>
-                                </td>
+
                               </tr>";
                         $total += $row['preco'];
                     }
@@ -102,29 +103,17 @@
                     $res = $conn->query("SELECT * FROM produtos WHERE id = $id");
                     $produto = $res->fetch_assoc();
                 ?>
-                    <hr>
-                    <form action="processa.php" method="POST">
-                        <input type="hidden" name="id" value="<?= $produto['id'] ?>">
-                        <div class="mb-3">
-                            <label>Nome do Produto</label>
-                            <input type="text" name="nome" class="form-control" value="<?= $produto['nome'] ?>" required>
-                        </div>
-                        <div class="mb-3">
-                            <label>Preço</label>
-                            <input type="number" name="preco" step="0.01" class="form-control" value="<?= $produto['preco'] ?>" required>
-                        </div>
-                        <button type="submit" name="update" class="btn btn-success">Salvar Alterações</button>
-                        <a href="relatorio.php" class="btn btn-secondary">Cancelar</a>
-                    </form>
+                    
                 <?php
                 }
 
                 $conn->close();
                 ?>
-
-                <div class="text-center mt-4">
-                    <a href="formulario.php" class="btn btn-primary">Voltar ao Cadastro</a>
-                </div>
+                <form action="processa.php" method="GET">
+                    <div class="col-12 d-flex justify-content-center" action="processa.php">
+                        <button href="formulario.php" type="submit" name="delete_produtos" class="btn btn-secondary btn-lg w-50 mt-1">Nova Compra</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

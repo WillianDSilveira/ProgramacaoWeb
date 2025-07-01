@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>PDV Pet Shop - Cadastro de Produtos</title>
+    <title>PDV Pet Shop - Compra de Produtos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
     <style>
         body {
-            background: linear-gradient(to right, #fceabb, #f8b500);
+            background: linear-gradient(to right, #fceabb,rgb(248, 0, 0));
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -33,7 +33,7 @@
         }
 
         .pet-icon {
-            font-size: 40px;
+            font-size: 200px;
             color: #ff914d;
         }
     </style>
@@ -42,10 +42,11 @@
 <body>
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="w-100" style="max-width: 600px;">
-            <div class="text-center mb-4">
+
+            <div class="text-center mb-6">
                 <i class="fas fa-paw pet-icon"></i>
-                <h1 class="mt-2">PDV Pet Shop</h1>
-                <p class="text-muted">Cadastro de Produtos</p>
+                <h1 class="mb-4 text-center">PDV Pet Shop</h1>
+                <p class="text-muted">Adicionar produtos ao carrinho</p>
             </div>
 
             <div class="card p-4 shadow-sm">
@@ -58,9 +59,11 @@
                         <input type="number" id="preco" name="preco" step="0.01" required class="form-control form-control-lg" placeholder="Preço do Produto">
                     </div>
 
-                    <div class="col-12">
-                        <input type="submit" value="Cadastrar Produto" class="btn btn-primary btn-lg w-100">
-                        <a href="relatorio.php" class="btn btn-secondary btn-lg w-100 mt-2">Ver Relatório de Compras</a>
+                    <div class="col-12 d-flex justify-content-center">
+                        <input type="submit" value="Adicionar Produto" class="btn btn-primary btn-lg w-50">
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <a href="carrinho.php" class="btn btn-secondary btn-lg w-50 mt-1">Ver Carrinho de Compras</a>
                     </div>
                 </form>
             </div>
