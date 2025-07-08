@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "cadastro");
+$conn = new mysqli("localhost", "root", "", "cadastro2");
 if ($conn->connect_error) {
     die("Erro na conexão: " . $conn->connect_error);
 }

@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "cadastro2");
+$conn = new mysqli("localhost", "root", "", "cadastro");
 
 $id = $_GET['id'] ?? 0;
 

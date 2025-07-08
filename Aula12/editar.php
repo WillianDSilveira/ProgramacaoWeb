@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "cadastro");
+$conn = new mysqli("localhost", "root", "", "cadastro2");
 $id = $_GET['id'] ?? 0;
 $stmt = $conn->prepare("SELECT * FROM enderecos WHERE id = ?");
 $stmt->bind_param("i", $id);
