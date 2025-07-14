@@ -27,16 +27,22 @@
         <h3 class="text-primary">Cadastro de Veículo</h3>
         <form>
           <div class="row g-3">
-            <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-3">
               <label for="ano" class="form-label">Ano do Bem</label>
               <input type="text" class="form-control" id="ano">
-            </div>
-            <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
               <label class="form-label">Veículo</label>
               <select class="form-select">
                 <option selected>Automóveis</option>
               </select>
+              </div>
+
+
             </div>
+            
+            
             <div class="col-md-3">
               <label class="form-label">Tipo</label>
               <select class="form-select">

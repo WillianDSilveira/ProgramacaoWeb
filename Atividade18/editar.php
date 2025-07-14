@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "clinica2");
+$conn = new mysqli("localhost", "root", "", "clinica");
 $id = $_GET['id'] ?? 0;
 $stmt = $conn->prepare("SELECT * FROM pacientes WHERE id = ?");
 $stmt->bind_param("i", $id);
@@ -65,9 +65,8 @@ if (!$dados) {
                     <div class="mb-3">
                         <label for="cep" class="form-label">Histórico</label>
                         <input type="text" class="form-control" name="historico" value="<?= htmlspecialchars($dados['historico']) ?>" required />
-                    </div>
-    
-                    <?php endif; ?>
+                    </div>    
+        
                 </div>
 
                 <div class="text-end">

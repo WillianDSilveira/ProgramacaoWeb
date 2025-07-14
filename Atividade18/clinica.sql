@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/07/2025 às 04:11
+-- Tempo de geração: 14/07/2025 às 22:16
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -18,19 +18,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `petshop`
+-- Banco de dados: `clinica`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `produtos`
+-- Estrutura para tabela `pacientes`
 --
 
-CREATE TABLE `produtos` (
+CREATE TABLE `pacientes` (
   `id` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `preco` varchar(100) NOT NULL
+  `nome` varchar(150) NOT NULL,
+  `data_nascimento` date NOT NULL,
+  `cpf` varchar(11) NOT NULL,
+  `telefone` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `sexo` enum('feminino','masculino','outro') DEFAULT NULL,
+  `sintomas` text DEFAULT NULL,
+  `historico` text DEFAULT NULL,
+  `data_cadastro` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -38,9 +45,9 @@ CREATE TABLE `produtos` (
 --
 
 --
--- Índices de tabela `produtos`
+-- Índices de tabela `pacientes`
 --
-ALTER TABLE `produtos`
+ALTER TABLE `pacientes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -48,10 +55,10 @@ ALTER TABLE `produtos`
 --
 
 --
--- AUTO_INCREMENT de tabela `produtos`
+-- AUTO_INCREMENT de tabela `pacientes`
 --
-ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `pacientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

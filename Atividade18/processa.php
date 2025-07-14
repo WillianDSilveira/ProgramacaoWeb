@@ -1,5 +1,6 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "clinica2");
+
+$conn = new mysqli("localhost", "root", "", "clinica");
 if ($conn->connect_error) {
     die("Erro na conexão: " . $conn->connect_error);
 }
@@ -20,6 +21,7 @@ $stmt = $conn->prepare("INSERT INTO pacientes (nome, data_nascimento, cpf, telef
 VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("ssssssss", $nome, $data_nascimento, $cpf, $telefone, $email, $sexo, $sintomas, $historico);
 $stmt->execute();
+header('Location: listar.php');
 ?>
 
 <!DOCTYPE html>

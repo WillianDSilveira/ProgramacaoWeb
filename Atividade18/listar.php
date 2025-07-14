@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "clinica2");
+$conn = new mysqli("localhost", "root", "", "clinica");
 if ($conn->connect_error) {
     die("Erro na conexão: " . $conn->connect_error);
 }
@@ -11,14 +11,16 @@ $resultado = $conn->query("SELECT * FROM pacientes");
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Endereços</title>
+    <title>Pacientes Cadastrados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1>Lista de Endereços</h1>
-        <a href="formulario.html" class="btn btn-primary">Novo Cadastro</a>
+        <h1>Pacientes Cadastrados</h1>
+    </div>
+     <div class="d-flex justify-content-between align-items-center mb-3">
+        <a href="formulario.php" class="btn btn-primary">Novo Cadastro</a>
     </div>
 
     <table class="table table-striped table-bordered align-middle">
@@ -37,9 +39,11 @@ $resultado = $conn->query("SELECT * FROM pacientes");
         <tbody>
            <?php while ($linha = $resultado->fetch_assoc()): ?>
             <tr>
+                <td><?= htmlspecialchars($linha['id']) ?></td>
+
                 <td><?= htmlspecialchars($linha['nome']) ?></td>
 
-                <td><?= htmlspecialchars($linha['data nascimento']) ?></td>
+                <td><?= htmlspecialchars($linha['data_nascimento']) ?></td>
 
                 <td><?= htmlspecialchars($linha['cpf']) ?></td>
 

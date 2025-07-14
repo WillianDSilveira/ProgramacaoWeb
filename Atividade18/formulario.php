@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -27,15 +27,15 @@
                             <input type="date" class="form-control" name="data_nascimento" required>
                         </div>
                         <div class="col-md- mb-3">
-                            <label for="numero" class="form-label">CPF</label>
-                            <input type="number" class="form-control" name="cpf" required>
+                            <label for="numero" class="form-label">CPF</label>                            
+                            <input type="text" class="form-control" name="cpf" inputmode="numeric" required>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="complemento" class="form-label">Telefone</label>
-                            <input type="number" class="form-control" name="telefone">
+                            <input type="text" class="form-control" name="telefone" inputmode="numeric" required>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="bairro" class="form-label">Email</label>
@@ -46,10 +46,10 @@
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label for="cidade" class="form-label">Sexo</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" name="sexo" aria-label="Default select example" required>
                                 <option selected>Selecione as opções</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Feminino</option>                            
+                                <option value="Masculino">Masculino</option>
+                                <option value="Feminino">Feminino</option>
                             </select>
 
                         </div>
@@ -68,7 +68,8 @@
                     </div>
 
                     <div class="row m-1">
-                        <a href="processa.php" class="btn btn-primary">Registrar Paciente</a>
+                        <button type="submit" class="btn btn-primary" href="listar.php">Registrar Paciente</button>
+        
                     </div>
                 </form>
             </div>
